@@ -5,4 +5,7 @@ const router = require('./routes/index');
 const app = express();
 app.use('/', router);
 
+//permite requisições post
+app.use(express.json());
+
 module.exports = app;
