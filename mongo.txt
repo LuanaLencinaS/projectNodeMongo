@@ -1,0 +1,5 @@
+1 - iniciar o servidor omngo:
+mongod
+
+2 - conectar:
+mongo
