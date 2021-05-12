@@ -1,0 +1,32 @@
+<h1> Seja Bem vindo! </h1>
+<p> Uma mensagem </p>
+
+{{! if com variavel boolean: }}
+{{#mostrar}}
+  <p> Nome: {{nome}} </p>
+  <p> Idade: {{idade}} </p>
+{{/mostrar}}
+
+<hr/>
+
+<ul>
+  {{#filmes}}
+    <li> Filme: {{nome}} - Nota: {{nota}}</li>
+  {{/filmes}}
+</ul>
+{{! monitora a variável para caso esteja vazia: }}
+{{^filmes}}
+    <p>Não há filmes para exibir</p>
+{{/filmes}}
+
+<hr/>
+
+<ul>
+  {{#interesses}}
+    <li> {{.}}</li>
+  {{/interesses}}
+</ul>
+
+<hr/>
+
+{{{testeHTML}}}
