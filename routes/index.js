@@ -1,15 +1,13 @@
 const express = require('express');
+const homeController = require('../controller/homeController');
+const userController = require('../controller/userController');
 
 //rotas
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  let obj = {
-    'pageTitle': 'Titulo teste'
-  };
-
-  res.render('home', obj);
-})
+router.get('/', homeController.userMiddleware, homeController.index);
+router.get('/users/login', userController.login);
+router.get('/users/register', userController.register);
 
 router.get('/teste', (req, res) => {
   let obj = {

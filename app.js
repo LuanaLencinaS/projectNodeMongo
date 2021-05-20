@@ -2,6 +2,10 @@ const express = require('express');
 const mustache = require('mustache-express');
 const router = require('./routes/index');
 const helpers = require('./helpers');
+const errorHandler = require('./handlers/errorHandler');
+
+//middleware
+
 
 //Configurações
 const app = express();
@@ -12,12 +16,15 @@ app.use((req, res, next) => {
   res.locals.h = helpers;
   res.locals.teste = '123';
   next();
-})
-
-app.use('/', router);
+});
 
 //permite requisições post
 app.use(express.json());
+
+app.use('/', router);
+
+//middleware handler 404
+app.use(errorHandler.notFound);
 
 app.engine('mustache', mustache(__dirname+'/views/includes', '.mustache'));
 app.set('view engine', 'mustache');

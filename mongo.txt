@@ -3,3 +3,16 @@ mongod
 
 2 - conectar:
 mongo
+
+/********/
+PROCESSO DE LOGIN
+
+-REQUISIÇÃO
+
+(middlewares)
+-VALIDAR CAMPOS
+-AUTORIZAR USUÁRIO
+
+-RESPOSTA (controller)
+---positiva
+---negativa
