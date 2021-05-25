@@ -1,6 +1,7 @@
 const express = require('express');
 const homeController = require('../controller/homeController');
 const userController = require('../controller/userController');
+const postController = require('../controller/postController');
 
 //rotas
 const router = express.Router();
@@ -8,6 +9,9 @@ const router = express.Router();
 router.get('/', homeController.userMiddleware, homeController.index);
 router.get('/users/login', userController.login);
 router.get('/users/register', userController.register);
+
+router.get('/post/add', postController.add);
+router.post('/post/add', postController.addAction);
 
 router.get('/teste', (req, res) => {
   let obj = {
